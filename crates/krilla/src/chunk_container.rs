@@ -297,8 +297,10 @@ impl ChunkContainer {
 
         let settings = sc.serialize_settings();
         let validators = settings.validators();
-        let write_embedded_files = self.non_stream.embedded_files.len() != 0
-            || validators.requires_embedded_files_when_empty();
+        // The document's own embedded files: those associated with
+        // structure elements are found through their `/AF` instead.
+        let write_embedded_files =
+            !embedded_files.is_empty() || validators.requires_embedded_files_when_empty();
 
         if !named_destinations.is_empty() || write_embedded_files {
             // Cannot use pdf-writer API here because it requires Ref's, while

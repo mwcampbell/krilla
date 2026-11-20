@@ -18,6 +18,14 @@ impl Hash for Data {
     }
 }
 
+impl PartialEq for Data {
+    fn eq(&self, other: &Self) -> bool {
+        self.as_ref() == other.as_ref()
+    }
+}
+
+impl Eq for Data {}
+
 impl From<Arc<dyn AsRef<[u8]> + Send + Sync>> for Data {
     fn from(value: Arc<dyn AsRef<[u8]> + Send + Sync>) -> Self {
         Self(value)

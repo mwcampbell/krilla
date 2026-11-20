@@ -29,7 +29,7 @@ pub enum EmbedError {
 }
 
 /// An embedded file.
-#[derive(Debug, Clone, Hash)]
+#[derive(Debug, Clone, PartialEq, Eq, Hash)]
 pub struct EmbeddedFile {
     /// The name of the embedded file.
     pub path: String,
@@ -165,7 +165,7 @@ impl AssociationKind {
 }
 
 /// A mime type.
-#[derive(Debug, Clone, Hash)]
+#[derive(Debug, Clone, PartialEq, Eq, Hash)]
 pub struct MimeType(String);
 
 impl MimeType {

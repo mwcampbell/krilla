@@ -1013,3 +1013,47 @@ fn tagging_missing_identifier_in_tree() {
 
     let _ = document.finish();
 }
+
+fn tagging_formula_with_associated_file_impl(document: &mut Document) {
+    let mathml = "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>x</mi><mn>2</mn></msup></math>";
+    let mut tag_tree = TagTree::new();
+    let mut par = TagGroup::new(Tag::P);
+    let mut formula = TagGroup::new(
+        Tag::Formula(Some("x squared".to_string())).with_lang(Some("en".to_string())),
+    )
+    .with_associated_file(krilla::embed::EmbeddedFile {
+        path: "formula-1.xml".to_string(),
+        mime_type: Some(krilla::embed::MimeType::new("application/mathml+xml").unwrap()),
+        description: Some("The formula as MathML".to_string()),
+        association_kind: krilla::embed::AssociationKind::Supplement,
+        data: mathml.as_bytes().to_vec().into(),
+        modification_date: None,
+        compress: Some(false),
+        location: None,
+    });
+
+    let mut page = document.start_page();
+    let mut surface = page.surface();
+    let id = surface.start_tagged(ContentTag::Span(SpanTag::empty()));
+    surface.fill_text_(25.0, "x2");
+    surface.end_tagged();
+    surface.finish();
+    page.finish();
+
+    formula.push(id);
+    par.push(formula);
+    tag_tree.push(par);
+    document.set_tag_tree(tag_tree);
+}
+
+#[snapshot(document, settings_25)]
+fn tagging_formula_with_associated_file(document: &mut Document) {
+    // PDF 2.0: the formula's element refers to its MathML in `/AF`.
+    tagging_formula_with_associated_file_impl(document);
+}
+
+#[snapshot(document)]
+fn tagging_formula_with_associated_file_pdf_17(document: &mut Document) {
+    // Without associated files, the file is left out.
+    tagging_formula_with_associated_file_impl(document);
+}

@@ -1,0 +1,276 @@
+%PDF-1.7
+%AAAA
+
+1 0 obj
+<<
+  /Type /Pages
+  /Count 1
+  /Kids [11 0 R]
+>>
+endobj
+
+2 0 obj
+<<
+  /Type /StructTreeRoot
+  /RoleMap <<
+    /Datetime /Span
+    /Terms /Part
+    /Title /P
+    /Strong /Span
+    /Em /Span
+  >>
+  /K [6 0 R]
+  /ParentTree <<
+    /Nums [0 3 0 R]
+  >>
+  /ParentTreeNextKey 1
+>>
+endobj
+
+3 0 obj
+[4 0 R]
+endobj
+
+4 0 obj
+<<
+  /Type /StructElem
+  /S /Formula
+  /P 5 0 R
+  /Lang (en)
+  /Alt (x squared)
+  /K [0]
+  /Pg 11 0 R
+>>
+endobj
+
+5 0 obj
+<<
+  /Type /StructElem
+  /S /P
+  /P 6 0 R
+  /K [4 0 R]
+>>
+endobj
+
+6 0 obj
+<<
+  /Type /StructElem
+  /S /Document
+  /P 2 0 R
+  /K [5 0 R]
+>>
+endobj
+
+7 0 obj
+<<
+  /ProcSet [/PDF /Text /ImageC /ImageB]
+  /Font <<
+    /f0 8 0 R
+  >>
+>>
+endobj
+
+8 0 obj
+<<
+  /Type /Font
+  /Subtype /Type0
+  /BaseFont /PAIPBS+NotoSans-Regular
+  /Encoding /Identity-H
+  /DescendantFonts [9 0 R]
+  /ToUnicode 13 0 R
+>>
+endobj
+
+9 0 obj
+<<
+  /Type /Font
+  /Subtype /CIDFontType2
+  /BaseFont /PAIPBS+NotoSans-Regular
+  /CIDSystemInfo <<
+    /Registry (Adobe)
+    /Ordering (Identity)
+    /Supplement 0
+  >>
+  /FontDescriptor 10 0 R
+  /DW 0
+  /CIDToGIDMap /Identity
+  /W [0 0 600 1 1 529 2 2 572]
+>>
+endobj
+
+10 0 obj
+<<
+  /Type /FontDescriptor
+  /FontName /PAIPBS+NotoSans-Regular
+  /Flags 131076
+  /FontBBox [18 0 520 724]
+  /ItalicAngle 0
+  /Ascent 1069
+  /Descent -293
+  /CapHeight 714
+  /StemV 95.4
+  /CIDSet 12 0 R
+  /FontFile2 14 0 R
+>>
+endobj
+
+11 0 obj
+<<
+  /Type /Page
+  /Resources 7 0 R
+  /MediaBox [0 0 595 842]
+  /StructParents 0
+  /Parent 1 0 R
+  /Contents 15 0 R
+>>
+endobj
+
+12 0 obj
+<<
+  /Length 18
+  /Filter [/ASCIIHexDecode /FlateDecode]
+>>
+stream
+789C7B000000E100E1
+endstream
+endobj
+
+13 0 obj
+<<
+  /Length 633
+  /Type /CMap
+  /WMode 0
+>>
+stream
+%!PS-Adobe-3.0 Resource-CMap
+%%DocumentNeededResources: procset CIDInit
+%%IncludeResource: procset CIDInit
+%%BeginResource: CMap Custom
+%%Title: (Custom Adobe Identity 0)
+%%Version: 1
+%%EndComments
+/CIDInit /ProcSet findresource begin
+12 dict begin
+begincmap
+/CIDSystemInfo 3 dict dup begin
+    /Registry (Adobe) def
+    /Ordering (Identity) def
+    /Supplement 0 def
+end def
+/CMapName /Custom def
+/CMapVersion 1 def
+/CMapType 0 def
+/WMode 0 def
+1 begincodespacerange
+<0000> <FFFF>
+endcodespacerange
+2 beginbfchar
+<0001> <0078>
+<0002> <0032>
+endbfchar
+endcmap
+CMapName currentdict /CMap defineresource pop
+end
+end
+%%EndResource
+%%EOF
+endstream
+endobj
+
+14 0 obj
+<<
+  /Length 1785
+  /Filter [/ASCIIHexDecode /FlateDecode]
+>>
+stream
+789C8D544D6C4C5114FEEE7BD337ADD64F4B69B098E9D056A3D39F695F1BAD26A2A960
+A89F4688A4F2CC3C338D997913F35A8A840509C282924858D8D889081B2244D8D5566C
+2462C9466C2C944E7DF7F6F56F54D27773DFFDBE73CF39F7DCEFDEF7200094E02274AC
+48A4464EDC7CBD7B3D2DF7D99F266D2B1EFAD6FF1910FBC8CD240D65CF8ACE915F21DF
+904CBB678C877840FE88BC2CE5C42C34204DFE9CBC386D9DC9A2465C207F431EC85869
+DB3A7FF517F917C017CE3A3977F20F7600C60ACED7654FD9D9A471FD327907B91F1A06
+E8FB4B1B63757E20521E2CDF182C0F0E887BF9BBA22DFF5E1B9B30235A1C0215F49BD4
+AA500AACD4236BDA23FACA50AD3FF4E145FCDAD5D88B77F15BB763A242186363F9F1FC
+F78F1F19D10468C5DA07AC0382C1B6F66EADADB526546DF86B4D33D2B2BA729561F8FD
+9541AD385FF7D2DC55D3DBD1DAB7A9B13EDD1377C307DAEF88C19DAFCCFEFD4D9D5B37
+043A43CDF6918EE3C7CC511F8B86D45313EFDFF6745F3AB6BCEB2774FDAB347FAEF59B
+DEB86D62343FBCE447D17652837B9C7A18E76BC87F024AAB26467F5F5AF243659AFBE8
+DA610C68E5A8D0BA64F55845AD8F282F5DF8508511669B1FE3537C191E533FE12B214E
+4A6F85A566490F6BF439EB611D26AE78D8876ABCF67011D6E28B870D0430EE613F7AC4
+5A0F17A35E0C78B80475623A4F29BAC5130F97A14B7CF7F05251ADD57B78195AF528B6
+C341963B39854124589FCB955AB8DB66B471B712B5100778671CB60452B0C9A2909161
+A26DB4A4381E9889CF296673B4997598EF383DF732DA650FE0202C64382B7D121862B4
+45BF16FA34B1B5A3936BF5B1ED209A8E9A8E692888FA376BA0C0E390AA22C7EA1CCE07
+E6ACB3F8DC832AAFC5EED26E713F36BF39E97392360727FEABCF1EB5AACC334295E5CC
+4E159960CE0CDF9267105BD0B3476928559575F793598C950ABBF4D88246B6D3AA85E9
+33BB7A98F91C7A3692DBF46DF4F23A440B47A70BD69ECD90A36D88FB95EAF5337A4A89
+5EE5EF2AD5E5EE5D66916AD8335AA538C6C833EA16C46919228EABB3902A2695EF41EE
+3ECAB14FAD9A9997393A2FC3665A0A4FB2997536AB3B385BD9FC75674F6E987D509DEB
+71EF844E93CB3AA6CEB597F778BFC22EB509CCE894F394CA31ABFC42B2EA7E87551529
+8E0EAD09CEF73143B440DDC5C560FA7F34799F7773A147673F8ACAE762F2F213DF0DFC
+05166713DF
+endstream
+endobj
+
+15 0 obj
+<<
+  /Length 117
+>>
+stream
+/Span <<
+  /MCID 0
+>> BDC
+q
+1 0 0 -1 0 842 cm
+0 g
+BT
+0 Tr
+/f0 20 Tf
+1 0 0 -1 0 25 Tm
+[(\000\001\000\002)] TJ
+ET
+Q
+EMC
+endstream
+endobj
+
+16 0 obj
+<<
+  /Type /Catalog
+  /Pages 1 0 R
+  /StructTreeRoot 2 0 R
+  /MarkInfo <<
+    /Marked true
+    /Suspects false
+  >>
+>>
+endobj
+
+xref
+0 17
+0000000000 65535 f
+0000000016 00000 n
+0000000081 00000 n
+0000000307 00000 n
+0000000331 00000 n
+0000000452 00000 n
+0000000526 00000 n
+0000000607 00000 n
+0000000699 00000 n
+0000000861 00000 n
+0000001138 00000 n
+0000001381 00000 n
+0000001517 00000 n
+0000001630 00000 n
+0000002343 00000 n
+0000004225 00000 n
+0000004397 00000 n
+trailer
+<<
+  /Size 17
+  /Root 16 0 R
+  /ID [(kA1kvg4d6arB7FayAiub6g==) (kA1kvg4d6arB7FayAiub6g==)]
+>>
+startxref
+4533
+%%EOF

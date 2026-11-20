@@ -141,6 +141,7 @@ use crate::configure::validate::VersionedFeature;
 use crate::configure::{PdfVersion, ValidationError};
 use crate::error::{KrillaError, KrillaResult};
 use crate::geom::Rect;
+use crate::interchange::embed::EmbeddedFile;
 use crate::page::page_root_transform;
 use crate::serialize::SerializeContext;
 
@@ -770,9 +771,11 @@ pub enum Node {
 }
 
 impl Node {
+    #[allow(clippy::too_many_arguments)]
     pub(crate) fn serialize(
         &self,
         sc: &mut SerializeContext,
+        chunk_container: &mut ChunkContainer,
         parent_tree_map: &mut HashMap<IdentifierType, Ref>,
         id_tree: &mut BTreeMap<TagId, Ref>,
         parent: Ref,
@@ -782,6 +785,7 @@ impl Node {
         match self {
             Node::Group(g) => Ok(Some(g.serialize(
                 sc,
+                chunk_container,
                 parent_tree_map,
                 id_tree,
                 parent,
@@ -821,6 +825,11 @@ pub struct TagGroup {
     pub tag: TagKind,
     /// The children of the tag group.
     pub children: Vec<Node>,
+    /// Files associated with the structure element (its `/AF` entry), for
+    /// example a `Formula`'s MathML. Associated files are a PDF 2.0
+    /// feature (also allowed by PDF/A-3); in export modes without them,
+    /// they are left out.
+    pub associated_files: Vec<EmbeddedFile>,
 }
 
 impl TagGroup {
@@ -829,6 +838,7 @@ impl TagGroup {
         Self {
             tag: tag.into(),
             children: vec![],
+            associated_files: vec![],
         }
     }
 
@@ -837,7 +847,15 @@ impl TagGroup {
         Self {
             tag: tag.into(),
             children,
+            associated_files: vec![],
         }
+    }
+
+    /// Associate a file with the structure element (see
+    /// [`TagGroup::associated_files`]).
+    pub fn with_associated_file(mut self, file: EmbeddedFile) -> Self {
+        self.associated_files.push(file);
+        self
     }
 
     /// Append a new child to the tag group.
@@ -845,9 +863,11 @@ impl TagGroup {
         self.children.push(child.into())
     }
 
+    #[allow(clippy::too_many_arguments)]
     pub(crate) fn serialize(
         &self,
         sc: &mut SerializeContext,
+        chunk_container: &mut ChunkContainer,
         parent_tree_map: &mut HashMap<IdentifierType, Ref>,
         id_tree: &mut BTreeMap<TagId, Ref>,
         parent_ref: Ref,
@@ -860,6 +880,7 @@ impl TagGroup {
         for child in &self.children {
             let serialized = child.serialize(
                 sc,
+                chunk_container,
                 parent_tree_map,
                 id_tree,
                 elem_ref,
@@ -871,9 +892,27 @@ impl TagGroup {
             }
         }
 
+        // The associated files' specifications, written before the element
+        // that refers to them.
+        let associated_files: Vec<Ref> = if sc.serialize_settings().supports_associated_files() {
+            self.associated_files
+                .iter()
+                .map(|file| sc.register_cacheable(chunk_container, file.clone()))
+                .collect()
+        } else {
+            vec![]
+        };
+
         let mut struct_elem = struct_elems.struct_element(elem_ref);
         self.tag.write_kind(&mut struct_elem, sc);
         struct_elem.parent(parent_ref);
+
+        if !associated_files.is_empty() {
+            struct_elem
+                .insert(Name(b"AF"))
+                .array()
+                .items(associated_files);
+        }
 
         let tag = self.tag.as_any();
         let pdf_version = sc.serialize_settings().pdf_version();
@@ -1248,6 +1287,7 @@ impl TagTree {
         for child in &self.children {
             let serialized = child.serialize(
                 sc,
+                chunk_container,
                 parent_tree_map,
                 id_tree_map,
                 root_ref,
